@@ -41,8 +41,8 @@ public class BinaryTreeSimpsons {
 
     public static void postorder(BinaryTree pAktWurzel) {
         if (pAktWurzel != null) {
-            inorder(pAktWurzel.getLeftTree());
-            inorder(pAktWurzel.getRightTree());
+            postorder(pAktWurzel.getLeftTree());
+            postorder(pAktWurzel.getRightTree());
             System.out.println(pAktWurzel.getContent() + " ");
         }
     }
