@@ -41,6 +41,15 @@ public class BinaryTreeSimpsons {
     {
         //ToDo: Implementiere preorder hier. NEU: Der Teilbaum wird als
         //Parameter übergeben, es wird nicht auf diesem aufgerufen!
+if (pAktWurzel.getLeftTree().getContent() != null) {
+           postorder(pAktWurzel.getLeftTree());
+        }
+        
+        if (pAktWurzel.getRightTree().getContent() != null) {
+           postorder(pAktWurzel.getRightTree());
+        }
+        
+        System.out.print(pAktWurzel.getContent().getVorname() + " ");
     }
     
     public static void levelorder(BinaryTree pAktWurzel)
