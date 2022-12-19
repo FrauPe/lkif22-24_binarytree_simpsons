@@ -15,14 +15,11 @@ public class BinaryTreeSimpsons {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // ToDo 
-        //1. Klasse Ahne implementieren
-        //2. Ahnenobjekte für Lisa Simpson anlegen
-        //3. Ahnenbaum für Lisa aufbauen, d.h. anlegen mit Ahneneobjekten und verknüpfen
-        //4. Preorder (und beliebige weitere) implementieren s.u. und Ahnenbaum zur Probe ausgeben.
-        //*: Levelorder [Lisa - Marge, Homer - Jacqueline, Clancey, Mona, Abe] implementieren. 
-        //-> Tipp: Hier wird eine lineare Datenstruktur zur Zwischenspeicherung benötigt und
-        //-> Rekursion ist nicht immer die Antwort, es kann auch mal mit einer Schleife besser gehen ;-)
+        final Ahne jacqueline = new Ahne("Jacqueline", "Bouvier", 'w'),
+clancy = new Ahne("Clancy", "Bouvier", 'm'),
+marge = new Ahne("Marge", "Simpson", 'w'),
+mona = new Ahne("Mona", "Simpson", 'w');
+
     }
     
     public static void preorder(BinaryTree pAktWurzel)
