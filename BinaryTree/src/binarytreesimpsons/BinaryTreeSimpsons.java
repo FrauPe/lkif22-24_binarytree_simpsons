@@ -7,8 +7,9 @@ package binarytreesimpsons;
 import java.util.ArrayList;
 
 /**
- * Testklasse zum Aufbau eines BinaryTree, der den Ahnenbaum von Lisa Simpson 
+ * Testklasse zum Aufbau eines BinaryTree, der den Ahnenbaum von Lisa Simpson
  * unter Verwendung einer Klasse Ahne darstellt.
+ *
  * @author pardella
  */
 public class BinaryTreeSimpsons {
@@ -17,34 +18,50 @@ public class BinaryTreeSimpsons {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // ToDo 
-        //1. Klasse Ahne implementieren
-        //2. Ahnenobjekte für Lisa Simpson anlegen
-        //3. Ahnenbaum für Lisa aufbauen, d.h. anlegen mit Ahneneobjekten und verknüpfen
-        //4. Preorder (und beliebige weitere) implementieren s.u. und Ahnenbaum zur Probe ausgeben.
-        //*: Levelorder [Lisa - Marge, Homer - Jacqueline, Clancey, Mona, Abe] implementieren. 
-        //-> Tipp: Hier wird eine lineare Datenstruktur zur Zwischenspeicherung benötigt und
-        //-> Rekursion ist nicht immer die Antwort, es kann auch mal mit einer Schleife besser gehen ;-)
+        final Ahne jacqueline = new Ahne("Jacqueline", "Bouvier", 'w'),
+clancy = new Ahne("Clancy", "Bouvier", 'm'),
+marge = new Ahne("Marge", "Simpson", 'w'),
+mona = new Ahne("Mona", "Simpson", 'w');
+
     }
-    
-    public static void preorder(BinaryTree pAktWurzel)
-    {
+
+    public static void preorder(BinaryTree pAktWurzel) {
         //ToDo: Implementiere preorder hier. NEU: Der Teilbaum wird als
         //Parameter übergeben, es wird nicht auf diesem aufgerufen!
+System.out.print(pAktWurzel.getContent().getVorname() + " ");
+       
+        if (pAktWurzel.getLeftTree().getContent() != null) {
+           preorder(pAktWurzel.getLeftTree());
+        }
+       
+        if (pAktWurzel.getRightTree().getContent() != null) {
+           preorder(pAktWurzel.getRightTree());
+        }
     }
-    
-    public static void inorder(BinaryTree pAktWurzel)
-    {
-        //ToDo: Implementiere preorder hier. NEU: Der Teilbaum wird als
-        //Parameter übergeben, es wird nicht auf diesem aufgerufen!
+
+    public static void inorder(BinaryTree pAktWurzel) {
+        if (pAktWurzel != null) {
+            inorder(pAktWurzel.getLeftTree());
+            System.out.println(pAktWurzel.getContent() + " ");
+            inorder(pAktWurzel.getRightTree());
+        }
     }
     
     public static void postorder(BinaryTree pAktWurzel)
     {
         //ToDo: Implementiere preorder hier. NEU: Der Teilbaum wird als
         //Parameter übergeben, es wird nicht auf diesem aufgerufen!
+if (pAktWurzel.getLeftTree().getContent() != null) {
+           postorder(pAktWurzel.getLeftTree());
+        }
+        
+        if (pAktWurzel.getRightTree().getContent() != null) {
+           postorder(pAktWurzel.getRightTree());
+        }
+       
+        System.out.print(pAktWurzel.getContent().getVorname() + " ");
+
     }
-    
     public static void levelorder(BinaryTree pAktWurzel)
     {
         ArrayList<Object> list;
@@ -74,5 +91,6 @@ public class BinaryTreeSimpsons {
             if(!baum.getLeftTree().isEmpty()) getLevel(baum.getLeftTree(), level - 1, list);
             if(!baum.getRightTree().isEmpty()) getLevel(baum.getRightTree(), level - 1, list);
         }
+
     }
 }
