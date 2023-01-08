@@ -4,6 +4,8 @@
  */
 package binarytreesimpsons;
 
+import java.util.ArrayList;
+
 /**
  * Testklasse zum Aufbau eines BinaryTree, der den Ahnenbaum von Lisa Simpson
  * unter Verwendung einer Klasse Ahne darstellt.
@@ -60,9 +62,35 @@ if (pAktWurzel.getLeftTree().getContent() != null) {
         System.out.print(pAktWurzel.getContent().getVorname() + " ");
 
     }
+    public static void levelorder(BinaryTree pAktWurzel)
+    {
+        ArrayList<Object> list;
+        int level = 0;
+        do
+        {
+            list = new ArrayList<>();
+            getLevel(pAktWurzel, level, list);
+            level++;
+            for(Object o : list)
+            {
+                System.out.print(o.toString() + " ");
+            }
+            System.out.println();
+        }
+        while(!list.isEmpty());
+    }
+    
+    private static void getLevel(BinaryTree baum, int level, ArrayList<Object> list)
+    {
+        if(level == 0)
+        {
+            list.add(baum.getContent());
+        }
+        else
+        {
+            if(!baum.getLeftTree().isEmpty()) getLevel(baum.getLeftTree(), level - 1, list);
+            if(!baum.getRightTree().isEmpty()) getLevel(baum.getRightTree(), level - 1, list);
+        }
 
-    public static void levelorder(BinaryTree pAktWurzel) {
-        //ToDo: Implementiere preorder hier. NEU: Der Teilbaum wird als
-        //Parameter übergeben, es wird nicht auf diesem aufgerufen!
     }
 }
