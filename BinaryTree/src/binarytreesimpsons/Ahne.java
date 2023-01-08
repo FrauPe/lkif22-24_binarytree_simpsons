@@ -15,11 +15,11 @@ public class Ahne {
     private char geschlecht;
 // Ende private 
 
-public Ahne (String pVorname, String pNachname, char pGeschlecht ){
-vorname = pVorname;
-nachname = pNachname;
-geschlecht = pGeschlecht; 
-}
+    public Ahne (String pVorname, String pNachname, char pGeschlecht ){
+        vorname = pVorname;
+        nachname = pNachname;
+        geschlecht = pGeschlecht; 
+    }
 
     public String getVorname() {
         return vorname;
@@ -44,20 +44,4 @@ geschlecht = pGeschlecht;
     public void setGeschlecht(char pgeschlecht) {
         this.geschlecht = pgeschlecht;
     }
-
-   
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
