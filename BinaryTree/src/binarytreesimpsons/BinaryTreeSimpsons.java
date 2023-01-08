@@ -26,6 +26,15 @@ mona = new Ahne("Mona", "Simpson", 'w');
     public static void preorder(BinaryTree pAktWurzel) {
         //ToDo: Implementiere preorder hier. NEU: Der Teilbaum wird als
         //Parameter übergeben, es wird nicht auf diesem aufgerufen!
+System.out.print(pAktWurzel.getContent().getVorname() + " ");
+       
+        if (pAktWurzel.getLeftTree().getContent() != null) {
+           preorder(pAktWurzel.getLeftTree());
+        }
+       
+        if (pAktWurzel.getRightTree().getContent() != null) {
+           preorder(pAktWurzel.getRightTree());
+        }
     }
 
     public static void inorder(BinaryTree pAktWurzel) {
@@ -35,13 +44,21 @@ mona = new Ahne("Mona", "Simpson", 'w');
             inorder(pAktWurzel.getRightTree());
         }
     }
-
-    public static void postorder(BinaryTree pAktWurzel) {
-        if (pAktWurzel != null) {
-            postorder(pAktWurzel.getLeftTree());
-            postorder(pAktWurzel.getRightTree());
-            System.out.println(pAktWurzel.getContent() + " ");
+    
+    public static void postorder(BinaryTree pAktWurzel)
+    {
+        //ToDo: Implementiere preorder hier. NEU: Der Teilbaum wird als
+        //Parameter übergeben, es wird nicht auf diesem aufgerufen!
+if (pAktWurzel.getLeftTree().getContent() != null) {
+           postorder(pAktWurzel.getLeftTree());
         }
+        
+        if (pAktWurzel.getRightTree().getContent() != null) {
+           postorder(pAktWurzel.getRightTree());
+        }
+       
+        System.out.print(pAktWurzel.getContent().getVorname() + " ");
+
     }
 
     public static void levelorder(BinaryTree pAktWurzel) {
