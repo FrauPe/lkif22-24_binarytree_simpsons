@@ -34,6 +34,19 @@ public class BinaryTreeSimpsons {
         k3 = new BinaryTree<>(homer, new BinaryTree<>(mona),
                 new BinaryTree<>(abraham));
         k1 = new BinaryTree<>(lisa, k2, k3);
+        
+        System.out.println("Preorder");
+        preorder(k1);
+        System.out.println();
+        System.out.println("Postorder");
+        postorder(k1);
+        System.out.println();
+        System.out.println("Inorder");
+        inorder(k1);
+        
+        System.out.println();
+        System.out.println("Levelorder");
+        levelorder(k1);
 
     }
 
