@@ -5,8 +5,9 @@
 package binarytreesimpsons;
 
 /**
- * Testklasse zum Aufbau eines BinaryTree, der den Ahnenbaum von Lisa Simpson 
+ * Testklasse zum Aufbau eines BinaryTree, der den Ahnenbaum von Lisa Simpson
  * unter Verwendung einer Klasse Ahne darstellt.
+ *
  * @author pardella
  */
 public class BinaryTreeSimpsons {
@@ -21,27 +22,29 @@ marge = new Ahne("Marge", "Simpson", 'w'),
 mona = new Ahne("Mona", "Simpson", 'w');
 
     }
-    
-    public static void preorder(BinaryTree pAktWurzel)
-    {
+
+    public static void preorder(BinaryTree pAktWurzel) {
         //ToDo: Implementiere preorder hier. NEU: Der Teilbaum wird als
         //Parameter übergeben, es wird nicht auf diesem aufgerufen!
     }
-    
-    public static void inorder(BinaryTree pAktWurzel)
-    {
-        //ToDo: Implementiere preorder hier. NEU: Der Teilbaum wird als
-        //Parameter übergeben, es wird nicht auf diesem aufgerufen!
+
+    public static void inorder(BinaryTree pAktWurzel) {
+        if (pAktWurzel != null) {
+            inorder(pAktWurzel.getLeftTree());
+            System.out.println(pAktWurzel.getContent() + " ");
+            inorder(pAktWurzel.getRightTree());
+        }
     }
-    
-    public static void postorder(BinaryTree pAktWurzel)
-    {
-        //ToDo: Implementiere preorder hier. NEU: Der Teilbaum wird als
-        //Parameter übergeben, es wird nicht auf diesem aufgerufen!
+
+    public static void postorder(BinaryTree pAktWurzel) {
+        if (pAktWurzel != null) {
+            postorder(pAktWurzel.getLeftTree());
+            postorder(pAktWurzel.getRightTree());
+            System.out.println(pAktWurzel.getContent() + " ");
+        }
     }
-    
-    public static void levelorder(BinaryTree pAktWurzel)
-    {
+
+    public static void levelorder(BinaryTree pAktWurzel) {
         //ToDo: Implementiere preorder hier. NEU: Der Teilbaum wird als
         //Parameter übergeben, es wird nicht auf diesem aufgerufen!
     }
