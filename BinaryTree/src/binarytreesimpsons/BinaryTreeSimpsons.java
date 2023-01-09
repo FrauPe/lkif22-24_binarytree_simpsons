@@ -65,7 +65,7 @@ public class BinaryTreeSimpsons {
     }
 
     public static void inorder(BinaryTree<Ahne> pAktWurzel) {
-        if (pAktWurzel != null) {
+        if (!pAktWurzel.isEmpty()) {
             inorder(pAktWurzel.getLeftTree());
             System.out.println(pAktWurzel.getContent() + " ");
             inorder(pAktWurzel.getRightTree());

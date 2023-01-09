@@ -44,4 +44,9 @@ public class Ahne {
     public void setGeschlecht(char pgeschlecht) {
         this.geschlecht = pgeschlecht;
     }
+
+    public String toString()
+    {
+        return vorname;
+    }
 }
